@@ -3,13 +3,17 @@
 // The original terms were specified at http://www.microsoft.com/info/cpyright.htm but that page is long dead :)
 
 using System;
-using System.IO;
+//using System.IO;
 
 internal static class Program
 {
-    private static void Main(string[] args)
+    private static void Main(string[] commandLineArguments)
     {
-        if (args.Length != 1)
+        foreach (string argument in commandLineArguments)
+        {
+            Console.WriteLine(argument);
+        }
+        /*if (args.Length != 1)
         {
             Console.WriteLine("Usage: gfn.exe program.gfn");
             return;
@@ -28,6 +32,6 @@ internal static class Program
 
         var codeGen = new CodeGen(parser.Result, moduleName);
         codeGen.Compile();
-        Console.WriteLine("Successfully compiled to " + moduleName);
+        Console.WriteLine("Successfully compiled to " + moduleName);*/
     }
 }
